@@ -20,7 +20,11 @@ public class Libro {
     public String getAutor() { return autor; }
     public void setAutor(String autor) { this.autor = autor; }
     public int getStock() { return stock; }
-    public void setStock(int stock) { this.stock = stock; }
+
+    public void setStock(int stock) {
+        if (stock < 0) throw new IllegalArgumentException("El stock no puede ser negativo");
+        this.stock = stock;
+    }
 
     @Override
     public String toString() {
